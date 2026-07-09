@@ -1,5 +1,5 @@
-INTERFACE
----------
+INTERFACE AND ABSTRACT
+----------------------
 An interface is a contarct that defines a set of methods that implementing classes must provide. It is used to achieve abstraction, loose coupling, polymorphism, and flexibility in application design 
 by allowing code to depend on behavior rather than concrete implementations.
 
@@ -25,4 +25,16 @@ Suppose you have an existing interface. Hundreds of classes implemented it.
 Later you want to add a new method.
 Without a default implementation, every existing class would break and would need code changes.
 
+Can we overrid statuc methods ?
+No, static methods cannot be overriden.
+Overriding is a runtime concept (dynamic polymorphism),
+while static methods are resolved at compile time.
 
+A sublcass can define a static method with the same signature as the parent
+class but this is called method hiding, not overriding.
+
+Can static methods be abstract ?
+No, a method cannot be both statuc and abstract in Java
+
+Can abstract class have static methods
+Yes
