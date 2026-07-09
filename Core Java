@@ -25,6 +25,4 @@ Suppose you have an existing interface. Hundreds of classes implemented it.
 Later you want to add a new method.
 Without a default implementation, every existing class would break and would need code changes.
 
-What is interface and abstract class ?
-Why do we need abstract class ?
-What is default keyword ?
+
