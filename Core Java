@@ -1,3 +1,30 @@
+INTERFACE
+---------
+An interface is a contarct that defines a set of methods that implementing classes must provide. It is used to achieve abstraction, loose coupling, polymorphism, and flexibility in application design 
+by allowing code to depend on behavior rather than concrete implementations.
+
+Why is an Interface used?
+1.To Define a Standard Contract
+  Different classes can follow the same contract.
+2.To Achieve Loose Coupling
+  Code depends on the interface rather than a specific implementation.
+3.To Suport prolymorphism
+4.To allow multiple inheritance
+
+Can intefaces have default methods ?
+Yes, Starting from java 8, interfaces can have default methods.
+Example
+interface Vehicle{
+  void start(); //abstract method
+  default void stop() {
+    System.out.println("Vehicle stopped");
+  }
+}
+Why were Default methods introduced ?
+Suppose you have an existing interface. Hundreds of classes implemented it.
+Later you want to add a new method.
+Without a default implementation, every existing class would break and would need code changes.
+
 What is interface and abstract class ?
 Why do we need abstract class ?
 What is default keyword ?
