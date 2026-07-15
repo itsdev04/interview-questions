@@ -1,1 +1,54 @@
 
+@Component
+----------
+@Component is a Spring stereotype annotation used to mark a class as Spring-managed bean.
+During component scanning, Spring automatically detects classes annotated with @Component,
+creates their objects and registers them in the IoC container, allowing them to be injected
+into other beans using dependency injection.
+
+Internal Working
+----------------
+When Spring starts
+1. Scans packages for classes annotated with @Component
+2. Creates an object (bean) of that class.
+3. Stores it in the Application Context (IoC Container)
+4. Makes it available for dependency injection.
+
+Specialized Annotations.
+---------------------------
+@Component -> Generic Spring bean
+@Service -> Business logic layer
+@Reposistory -> Data access layer (DAO)
+@Controller -> Web/MVC controller
+
+What is the difference between @Component and @Bean
+----------------------------------------------------
+@Component is class level annotation and @Bean is method level annontation
+Marks class as a spring-managed bean , @bean explicitly defines a bean in a configuration class
+Automatically discovered via component scanning vs manually created by spring using method
+Less control over instantiation, full control over bean creation
+Not possible if you cannot modify the source code, Ideal for third-party libraries
+
+@Configuration
+public class CloudConfig{
+  @Bean
+  public AmazonS3Client amazonS3cleint(){ //third party library cannot use @Componnet since we dont own source code
+  return new AmazonS3Client();
+}
+}
+
+@Primary and @Qualifier
+-----------------------
+When multiple beans of the same type exist in the Spring Container.
+
+@Primary
+- Default bean selection
+- Used application-wide
+- No need to specify at every injection point
+
+@Qualifier
+- Explicit bean selection
+- Used for a specific injection point
+- Overried @Primary
+
+@Qualifier takes precedence over @Primary when both are present.
