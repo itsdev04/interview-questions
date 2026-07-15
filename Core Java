@@ -38,3 +38,40 @@ No, a method cannot be both statuc and abstract in Java
 
 Can abstract class have static methods
 Yes
+
+Diamond Problem
+---------------
+The Diamond Problem is a method ambiguity issue that occurs in multiple inheritance when a child
+class inherits the same method through multiple paths. Java avoids the classic diamond problem
+by not supporting multiple inheritence.
+
+================================
+InterfaceName.super.methodName()
+================================
+How can you call default method of desired interface when two interface having same default method ?
+interfaceA{
+default display(){
+System.out.pritln("Default method from Interface A")
+}
+}
+
+
+interfaceB{
+default display(){
+System.out.pritln("Default method from Interface B")
+}
+}
+
+public class Test implements InterfaceA, interfaceB{
+  @Override
+public void display(){
+  InterfaceB.super.display();
+}
+
+public static void main(String[] args){
+Test t = new Test();
+t.display();
+}
+}
+
+
