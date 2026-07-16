@@ -1,0 +1,21 @@
+
+docker exec -it mysql_container bash = To access mysql runnning mysql_container from command
+
+docker ps = To check the container status
+docker run -d mysql_container -e MY_ROOT_PASSWORD=root -p 3309:3306 -v mysql:
+
+docker stop container_id = Stop docker container
+
+DOCKER VOLUME
+--------------
+docker volume list = To list down all the volumes
+
+docker volume create my_db_data = To create volume
+
+How to map containers data to volume
+
+docker volume inspect volume_name = To check the volume in detail
+
+docker volume rm volume_name = Remove volume
+
+docker volume prune = Remove /Delete unused volume
