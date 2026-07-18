@@ -19,3 +19,10 @@ docker volume inspect volume_name = To check the volume in detail
 docker volume rm volume_name = Remove volume
 
 docker volume prune = Remove /Delete unused volume
+
+DOCKER NETWORK
+---------------
+To establish connection between containers
+
+docker network ls = To listdown networks
+docker create network_name = To create network
